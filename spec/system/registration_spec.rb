@@ -17,6 +17,7 @@ def fill_extra_user_fields
   select "Other", from: :registration_user_gender
   select "Argentina", from: :registration_user_country
   fill_in :registration_user_postal_code, with: "00000"
+  fill_in :registration_user_profession, with: "Informatic Engineer"
   # Block ExtraUserFields FillExtraUserFields
 
   # EndBlock
@@ -41,6 +42,7 @@ describe "Extra user fields", type: :system do
       "postal_code" => postal_code,
       "gender" => gender,
       "country" => country,
+      "profession" => profession,
       # Block ExtraUserFields ExtraUserFields
 
       # EndBlock
@@ -64,6 +66,10 @@ describe "Extra user fields", type: :system do
     { "enabled" => true }
   end
 
+  let(:profession) do
+    { "enabled" => true }
+  end
+
   # Block ExtraUserFields RspecVar
 
   # EndBlock
@@ -79,6 +85,7 @@ describe "Extra user fields", type: :system do
       expect(page).to have_content("Gender")
       expect(page).to have_content("Country")
       expect(page).to have_content("Postal code")
+      expect(page).to have_content("Profession")
       # Block ExtraUserFields ContainsFieldSpec
 
       # EndBlock
@@ -100,6 +107,7 @@ describe "Extra user fields", type: :system do
   it_behaves_like "mandatory extra user fields", "gender"
   it_behaves_like "mandatory extra user fields", "country"
   it_behaves_like "mandatory extra user fields", "postal_code"
+  it_behaves_like "mandatory extra user fields", "profession"
   # Block ExtraUserFields ItBehavesLikeSpec
 
   # EndBlock
@@ -112,6 +120,7 @@ describe "Extra user fields", type: :system do
       expect(page).not_to have_content("Gender")
       expect(page).not_to have_content("Country")
       expect(page).not_to have_content("Postal code")
+      expect(page).not_to have_content("Profession")
       # Block ExtraUserFields DoesNotContainFieldSpec
 
       # EndBlock

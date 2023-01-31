@@ -20,6 +20,7 @@ describe "Account", type: :system do
       "postal_code" => postal_code,
       "gender" => gender,
       "country" => country,
+      "profession" => profession
       # Block ExtraUserFields ExtraUserFields
 
       # EndBlock
@@ -40,6 +41,10 @@ describe "Account", type: :system do
   end
 
   let(:gender) do
+    { "enabled" => true }
+  end
+
+  let(:profession) do
     { "enabled" => true }
   end
 
@@ -69,6 +74,7 @@ describe "Account", type: :system do
           select "Other", from: :user_gender
           select "Argentina", from: :user_country
           fill_in :user_postal_code, with: "00000"
+          fill_in :user_profession, with: "Software Developer"
           # Block ExtraUserFields FillFieldSpec
 
           # EndBlock
@@ -116,6 +122,14 @@ describe "Account", type: :system do
       end
 
       it_behaves_like "does not display extra user field", "gender", "Gender"
+    end
+
+    context "when profession is not enabled" do
+      let(:profession) do
+        { "enabled" => false }
+      end
+
+      it_behaves_like "does not display extra user field", "profession", "Profession"
     end
   end
 end

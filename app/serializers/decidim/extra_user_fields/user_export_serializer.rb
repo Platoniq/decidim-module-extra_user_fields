@@ -25,9 +25,10 @@ module Decidim
           :country,
           :postal_code,
           :date_of_birth,
-          # Block ExtraUserFields AddExtraField
+          :profession,
+        # Block ExtraUserFields AddExtraField
 
-          # EndBlock
+        # EndBlock
         ]
       end
       # rubocop:enable Style/TrailingCommaInArrayLiteral
