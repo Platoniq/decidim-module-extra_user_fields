@@ -46,7 +46,7 @@ module Decidim
           profession: @form.profession,
           # Block ExtraUserFields SaveInExtendedData
           # EndBlock
-          )
+        )
       end
       # rubocop:enable Style/TrailingCommaInArguments
     end
