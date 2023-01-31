@@ -43,6 +43,7 @@ module Decidim
           postal_code: @form.postal_code,
           date_of_birth: @form.date_of_birth,
           gender: @form.gender,
+          profession: @form.profession,
           # Block ExtraUserFields SaveInExtendedData
           # EndBlock
         )

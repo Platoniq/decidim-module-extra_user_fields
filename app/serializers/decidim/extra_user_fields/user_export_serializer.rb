@@ -25,6 +25,7 @@ module Decidim
           :country,
           :postal_code,
           :date_of_birth,
+          :profession,
           # Block ExtraUserFields AddExtraField
 
           # EndBlock
