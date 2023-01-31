@@ -44,8 +44,8 @@ module Decidim
           date_of_birth: @form.date_of_birth,
           gender: @form.gender,
           profession: @form.profession,
-        # Block ExtraUserFields SaveInExtendedData
-        # EndBlock
+          # Block ExtraUserFields SaveInExtendedData
+          # EndBlock
           )
       end
       # rubocop:enable Style/TrailingCommaInArguments
