@@ -13,6 +13,10 @@
   <%= f.text_field :postal_code %>
 <% end %>
 
+<% if current_organization.activated_extra_field?(:profession) %>
+  <%= f.text_field :profession %>
+<% end %>
+
 <%# Block ExtraUserFields AccountFormFields %>
 
 <%# EndBlock %>

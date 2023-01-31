@@ -29,6 +29,12 @@
         </div>
       <% end %>
 
+      <% if current_organization.activated_extra_field?(:profession) %>
+        <div class="field">
+          <%= f.text_field :profession %>
+        </div>
+      <% end %>
+
       <%# Block ExtraUserFields SignUpFormFields %>
 
       <%# EndBlock %>

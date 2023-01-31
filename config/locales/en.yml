@@ -7,6 +7,7 @@ en:
         date_of_birth: Date of birth
         gender: Gender
         postal_code: Postal code
+        profession: Profession
   decidim:
     admin:
       extra_user_fields:
@@ -35,6 +36,9 @@ en:
             postal_code:
               description: This field is a String field. User will be able to fill in a postal code
               label: Enable postal code field
+            profession:
+              description: This field is a String field. User will be able to fill in a profession
+              label: Enable profession field
           update:
             failure: An error occurred on update
             success: Extra user fields correctly updated in organization
