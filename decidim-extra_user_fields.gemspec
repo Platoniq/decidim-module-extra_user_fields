@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email = ["entantoencuanto.rb@gmail.com"]
   s.license = "AGPL-3.0"
   s.homepage = "https://github.com/decidim/decidim-module-extra_user_fields"
-  s.required_ruby_version = ">= 2.7"
+  s.required_ruby_version = ">= 3.0"
 
   s.name = "decidim-extra_user_fields"
   s.summary = "A decidim extra_user_fields module"
@@ -21,4 +21,5 @@ Gem::Specification.new do |s|
   s.add_dependency "country_select", "~> 4.0"
   s.add_dependency "decidim-core", Decidim::ExtraUserFields.decidim_version
   s.add_dependency "deface", "~> 1.5"
+  s.metadata["rubygems_mfa_required"] = "true"
 end
