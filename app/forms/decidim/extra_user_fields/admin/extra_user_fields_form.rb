@@ -6,12 +6,12 @@ module Decidim
       class ExtraUserFieldsForm < Decidim::Form
         include TranslatableAttributes
 
-        attribute :enabled, Virtus::Attribute::Boolean
-        attribute :country, Virtus::Attribute::Boolean
-        attribute :postal_code, Virtus::Attribute::Boolean
-        attribute :date_of_birth, Virtus::Attribute::Boolean
-        attribute :gender, Virtus::Attribute::Boolean
-        attribute :profession, Virtus::Attribute::Boolean
+        attribute :enabled, Boolean
+        attribute :country, Boolean
+        attribute :postal_code, Boolean
+        attribute :date_of_birth, Boolean
+        attribute :gender, Boolean
+        attribute :profession, Boolean
         # Block ExtraUserFields Attributes
 
         # EndBlock
