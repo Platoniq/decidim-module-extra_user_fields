@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
-DECIDIM_VERSION = ">= 0.27.0"
+base_path = ""
+base_path = "../" if File.basename(__dir__) == "development_app"
+require_relative "#{base_path}lib/decidim/extra_user_fields/version"
+
+DECIDIM_VERSION = Decidim::ExtraUserFields::DECIDIM_VERSION
 
 source "https://rubygems.org"
 
