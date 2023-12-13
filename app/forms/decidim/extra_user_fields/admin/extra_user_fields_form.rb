@@ -13,6 +13,8 @@ module Decidim
         attribute :gender, Boolean
         attribute :phone_number, Boolean
         attribute :location, Boolean
+        attribute :profession, Boolean
+        attribute :document_id, Boolean
         # Block ExtraUserFields Attributes
 
         # EndBlock
@@ -25,6 +27,8 @@ module Decidim
           self.gender = model.extra_user_fields.dig("gender", "enabled")
           self.phone_number = model.extra_user_fields.dig("phone_number", "enabled")
           self.location = model.extra_user_fields.dig("location", "enabled")
+          self.profession = model.extra_user_fields.dig("profession", "enabled")
+          self.document_id = model.extra_user_fields.dig("document_id", "enabled")
           # Block ExtraUserFields MapModel
 
           # EndBlock

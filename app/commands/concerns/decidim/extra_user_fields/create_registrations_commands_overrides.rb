@@ -34,7 +34,9 @@ module Decidim
           date_of_birth: form.date_of_birth,
           gender: form.gender,
           phone_number: form.phone_number,
-          location: form.location
+          location: form.location,
+          profession: form.profession,
+          document_id: form.document_id
         )
       end
     end
