@@ -22,6 +22,8 @@ describe "Account", type: :system do
       "country" => country,
       "phone_number" => phone_number,
       "location" => location,
+      "profession" => profession,
+      "document_id" => document_id,
       # Block ExtraUserFields ExtraUserFields
 
       # EndBlock
@@ -53,6 +55,14 @@ describe "Account", type: :system do
     { "enabled" => true }
   end
 
+  let(:profession) do
+    { "enabled" => true }
+  end
+
+  let(:document_id) do
+    { "enabled" => true }
+  end
+
   # Block ExtraUserFields RspecVar
 
   # EndBlock
@@ -81,6 +91,8 @@ describe "Account", type: :system do
           fill_in :user_postal_code, with: "00000"
           fill_in :user_phone_number, with: "0123456789"
           fill_in :user_location, with: "Cahors"
+          fill_in :user_profession, with: "Software Engineer"
+          fill_in :user_document_id, with: "123456789-A"
           # Block ExtraUserFields FillFieldSpec
 
           # EndBlock
@@ -144,6 +156,22 @@ describe "Account", type: :system do
       end
 
       it_behaves_like "does not display extra user field", "location", "Location"
+    end
+
+    context "when profession is not enabled" do
+      let(:profession) do
+        { "enabled" => false }
+      end
+
+      it_behaves_like "does not display extra user field", "profession", "Profession"
+    end
+
+    context "when document id is not enabled" do
+      let(:document_id) do
+        { "enabled" => false }
+      end
+
+      it_behaves_like "does not display extra user field", "document_id", "Document ID"
     end
   end
 end

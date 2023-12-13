@@ -15,6 +15,8 @@ describe Decidim::ExtraUserFields::UserExportSerializer do
       country: country,
       phone_number: phone_number,
       location: location,
+      profession: profession,
+      document_id: document_id,
       # Block ExtraUserFields ExtraUserFields
 
       # EndBlock
@@ -28,6 +30,8 @@ describe Decidim::ExtraUserFields::UserExportSerializer do
   let(:country) { "Argentina" }
   let(:phone_number) { "0123456789" }
   let(:location) { "Cahors" }
+  let(:profession) { "Software Engineer" }
+  let(:document_id) { "123456789-A" }
   # Block ExtraUserFields RspecVar
 
   # EndBlock
@@ -60,6 +64,14 @@ describe Decidim::ExtraUserFields::UserExportSerializer do
 
     it "includes the location" do
       expect(serialized).to include(location: resource.extended_data["location"])
+    end
+
+    it "includes the profession" do
+      expect(serialized).to include(profession: resource.extended_data["profession"])
+    end
+
+    it "includes the document id" do
+      expect(serialized).to include(document_id: resource.extended_data["document_id"])
     end
 
     # Block ExtraUserFields IncludeExtraField

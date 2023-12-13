@@ -19,6 +19,8 @@ def fill_extra_user_fields
   fill_in :registration_user_postal_code, with: "00000"
   fill_in :registration_user_phone_number, with: "0123456789"
   fill_in :registration_user_location, with: "Cahors"
+  fill_in :registration_user_profession, with: "Software Engineer"
+  fill_in :registration_user_document_id, with: "123456789-A"
   # Block ExtraUserFields FillExtraUserFields
 
   # EndBlock
@@ -46,6 +48,8 @@ describe "Extra user fields", type: :system do
       "country" => country,
       "phone_number" => phone_number,
       "location" => location,
+      "profession" => profession,
+      "document_id" => document_id,
       # EndBlock
     }
   end
@@ -75,6 +79,14 @@ describe "Extra user fields", type: :system do
     { "enabled" => true }
   end
 
+  let(:profession) do
+    { "enabled" => true }
+  end
+
+  let(:document_id) do
+    { "enabled" => true }
+  end
+
   # Block ExtraUserFields RspecVar
 
   # EndBlock
@@ -92,6 +104,8 @@ describe "Extra user fields", type: :system do
       expect(page).to have_content("Postal code")
       expect(page).to have_content("Phone Number")
       expect(page).to have_content("Location")
+      expect(page).to have_content("Profession")
+      expect(page).to have_content("Document ID")
       # Block ExtraUserFields ContainsFieldSpec
 
       # EndBlock
@@ -115,6 +129,8 @@ describe "Extra user fields", type: :system do
   it_behaves_like "mandatory extra user fields", "postal_code"
   it_behaves_like "mandatory extra user fields", "phone_number"
   it_behaves_like "mandatory extra user fields", "location"
+  it_behaves_like "mandatory extra user fields", "profession"
+  it_behaves_like "mandatory extra user fields", "document_id"
   # Block ExtraUserFields ItBehavesLikeSpec
 
   # EndBlock
@@ -129,6 +145,8 @@ describe "Extra user fields", type: :system do
       expect(page).not_to have_content("Postal code")
       expect(page).not_to have_content("Phone Number")
       expect(page).not_to have_content("Location")
+      expect(page).not_to have_content("Profession")
+      expect(page).not_to have_content("Document ID")
       # Block ExtraUserFields DoesNotContainFieldSpec
 
       # EndBlock

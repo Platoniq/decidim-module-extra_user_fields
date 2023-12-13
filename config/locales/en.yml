@@ -5,10 +5,12 @@ en:
       user:
         country: Country
         date_of_birth: Date of birth
+        document_id: Document ID
         gender: Gender
         location: Location
         phone_number: Phone Number
         postal_code: Postal code
+        profession: Profession
   decidim:
     admin:
       actions:
@@ -35,6 +37,10 @@ en:
               description: This field is a Date field. User will be able to register
                 a birth date by using a Date picker
               label: Enable date of birth field
+            document_id:
+              description: This field is a String field. User will be able to choose
+                a document id
+              label: Enable document id field
             gender:
               description: This field is a list of genders. User will be able to choose
                 a gender
@@ -51,6 +57,10 @@ en:
               description: This field is a String field. User will be able to fill
                 in a postal code
               label: Enable postal code field
+            profession:
+              description: This field is a String field. User will be able to choose
+                a profession
+              label: Enable profession field
           form:
             callout:
               help: Enable custom extra user fields functionality to be able to manage

@@ -19,6 +19,8 @@ module Decidim
         attribute :gender, String
         attribute :phone_number, String
         attribute :location, String
+        attribute :profession, String
+        attribute :document_id, String
 
         # EndBlock
 
@@ -30,6 +32,8 @@ module Decidim
         validates :gender, presence: true, inclusion: { in: Decidim::ExtraUserFields::Engine::DEFAULT_GENDER_OPTIONS.map(&:to_s) }, if: :gender?
         validates :phone_number, presence: true, if: :phone_number?
         validates :location, presence: true, if: :location?
+        validates :profession, presence: true, if: :profession?
+        validates :document_id, presence: true, if: :document_id?
 
         # EndBlock
       end
@@ -43,6 +47,8 @@ module Decidim
         self.gender = extended_data[:gender]
         self.phone_number = extended_data[:phone_number]
         self.location = extended_data[:location]
+        self.profession = extended_data[:profession]
+        self.document_id = extended_data[:document_id]
 
         # Block ExtraUserFields MapModel
 
@@ -74,6 +80,14 @@ module Decidim
 
       def location?
         extra_user_fields_enabled && current_organization.activated_extra_field?(:location)
+      end
+
+      def profession?
+        extra_user_fields_enabled && current_organization.activated_extra_field?(:profession)
+      end
+
+      def document_id?
+        extra_user_fields_enabled && current_organization.activated_extra_field?(:document_id)
       end
 
       # EndBlock

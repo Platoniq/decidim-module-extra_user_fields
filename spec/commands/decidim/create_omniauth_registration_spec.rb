@@ -18,6 +18,8 @@ module Decidim
         let(:location) { "Paris" }
         let(:phone_number) { "0123456789" }
         let(:postal_code) { "75001" }
+        let(:profession) { "Software Engineer" }
+        let(:document_id) { "123456789-A" }
         let(:extended_data) do
           {
             country: country,
@@ -25,7 +27,9 @@ module Decidim
             gender: gender,
             location: location,
             phone_number: phone_number,
-            postal_code: postal_code
+            postal_code: postal_code,
+            profession: profession,
+            document_id: document_id
           }
         end
 
@@ -45,7 +49,9 @@ module Decidim
               "date_of_birth" => date_of_birth,
               "gender" => gender,
               "phone_number" => phone_number,
-              "location" => location
+              "location" => location,
+              "profession" => profession,
+              "document_id" => document_id
             }
           }
         end

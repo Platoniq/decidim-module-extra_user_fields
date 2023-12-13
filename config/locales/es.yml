@@ -5,11 +5,21 @@ es:
       user:
         country: País
         date_of_birth: Fecha de nacimiento
+        document_id: DNI
         gender: Género
         location: Localización
         phone_number: Teléfono
         postal_code: Código postal
+        profession: Profesión
   decidim:
+    admin:
+      actions:
+        export: Exportar
+      exports:
+        export_as: Exportar %{export_format}
+      extra_user_fields:
+        menu:
+          title: Gestionar campos extra de usuario
     components:
       extra_user_fields:
         name: ExtraUserFields
@@ -17,7 +27,62 @@ es:
       admin:
         exports:
           users: Participantes
+        extra_user_fields:
+          fields:
+            country:
+              description: Este campo es un listado de países. El usuario podrá excoger
+              label: Habilitar campo de país
+            date_of_birth:
+              description: Este es un campo de tipo fecha. El usuario podrá registrar
+                su fecha de nacimiento usando un selector de fecha
+              label: Habilitar campo de fecha de nacimiento
+            document_id:
+              description: Este es un campo de texto. El usuario podrá registrar su
+                DNI
+              label: Habilitar campo DNI
+            gender:
+              description: Este campo es un campo de géneros. El usuario podrá seleccionar
+                uno
+              label: Habilitar campo de género
+            location:
+              description: Este es un campo de texto. El usuario podrá rellenarlo
+                con su localización User will be able to fill in a location
+              label: Habilitar campo de localización
+            phone_number:
+              description: Este es un campo de texto. El usuario lo podrá rellenar
+                con su número de teléfono
+              label: Habilitar campo de teléfono
+            postal_code:
+              description: Este es un campo de texto. El usuario lo podrá rellenar
+                con su código postal
+              label: Habilitar campo de código postal
+            profession:
+              description: Este es un campo de texto. El usuario lo podrá rellenar
+                con su profesión
+              label: Habilitar campo de profesión
+          form:
+            callout:
+              help: Habilitar funcionalidad de campos extra de usuario para ser capaz
+                de gestionar los campos extra que se mostrarán en el formulario de
+                registro. Incluso si la opción está habilitada, <strong>el formulario
+                de registro solo será actualizado cuando al menos un campo extra esté
+                seleccionado</strong>.
+            extra_user_fields:
+              extra_user_fields_enabled: Habilitar campos extra de usuario
+              section: Habilitar campos extra de usuario para formulario de registro
+            global:
+              title: Activar / desactivar funcionalidad
+          index:
+            save: Guardar configuración
+            title: Gestionar campos extra de usuario
+          update:
+            failure: Ha ocurrido un error al actualizar
+            success: Los campos extra de usaurio se han actualizado correctamente
+              en la organización
       genders:
         female: Mujer
         male: Hombre
         other: Otro
+      registration_form:
+        signup:
+          legend: Más información
