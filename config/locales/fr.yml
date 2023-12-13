@@ -5,10 +5,12 @@ fr:
       user:
         country: Pays
         date_of_birth: Date de naissance
+        document_id: Carte d'identité
         gender: Genre
         location: Localisation
         phone_number: Numéro de téléphone
         postal_code: Code postal
+        profession: Profession
   decidim:
     admin:
       actions:
@@ -35,6 +37,10 @@ fr:
               description: Ce champ est un champ date de naissance. L'utilisateur
                 pourra choisir une date.
               label: Activer le champ date de naissance
+            document_id:
+              description: Ce champ permet l'ajout de texte. L'utilisateur pourra
+                choisir une carte d'identité.
+              label: Activer le champ carte d'identité
             gender:
               description: Ce champ contient une liste de genres. L'utilisateur pourra
                 choisir un genre.
@@ -51,6 +57,10 @@ fr:
               description: Ce champ est un champ code postal. L'utilisateur pourra
                 choisir un code postal.
               label: Activer le champ code postal
+            profession:
+              description: Ce champ permet l'ajout de texte. L'utilisateur pourra
+                choisir une profession.
+              label: Activer le champ profession
           form:
             callout:
               help: Activez la fonctionnalité des champs d'inscription personnalisés

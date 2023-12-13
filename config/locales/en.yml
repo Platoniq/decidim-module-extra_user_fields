@@ -38,8 +38,8 @@ en:
                 a birth date by using a Date picker
               label: Enable date of birth field
             document_id:
-              description: This field is a String field. User will be able to choose a
-                document id
+              description: This field is a String field. User will be able to choose
+                a document id
               label: Enable document id field
             gender:
               description: This field is a list of genders. User will be able to choose
@@ -58,8 +58,8 @@ en:
                 in a postal code
               label: Enable postal code field
             profession:
-              description: This field is a String field. User will be able to choose a
-                profession
+              description: This field is a String field. User will be able to choose
+                a profession
               label: Enable profession field
           form:
             callout:

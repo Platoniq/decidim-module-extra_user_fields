@@ -5,10 +5,12 @@ ca:
       user:
         country: País
         date_of_birth: Data de naixement
+        document_id: DNI
         gender: Gènere
         location: Localització
         phone_number: Telèfon
         postal_code: Codi postal
+        profession: Professió
   decidim:
     components:
       extra_user_fields:
