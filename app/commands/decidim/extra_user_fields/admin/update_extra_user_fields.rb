@@ -49,6 +49,7 @@ module Decidim
             "phone_number" => { "enabled" => form.phone_number.presence || false },
             "location" => { "enabled" => form.location.presence || false },
             "profession" => { "enabled" => form.profession.presence || false },
+            "document_id_name" => { "enabled" => form.document_id_name.presence || false },
             "document_id" => { "enabled" => form.document_id.presence || false },
             # Block ExtraUserFields SaveFieldInConfig
 

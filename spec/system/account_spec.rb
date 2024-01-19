@@ -23,6 +23,7 @@ describe "Account", type: :system do
       "phone_number" => phone_number,
       "location" => location,
       "profession" => profession,
+      "document_id_name" => document_id_name,
       "document_id" => document_id,
       # Block ExtraUserFields ExtraUserFields
 
@@ -59,6 +60,10 @@ describe "Account", type: :system do
     { "enabled" => true }
   end
 
+  let(:document_id_name) do
+    { "enabled" => true }
+  end
+
   let(:document_id) do
     { "enabled" => true }
   end
@@ -92,6 +97,7 @@ describe "Account", type: :system do
           fill_in :user_phone_number, with: "0123456789"
           fill_in :user_location, with: "Cahors"
           fill_in :user_profession, with: "Software Engineer"
+          fill_in :user_document_id_name, with: "Jonh Doe"
           fill_in :user_document_id, with: "123456789-A"
           # Block ExtraUserFields FillFieldSpec
 
@@ -166,12 +172,21 @@ describe "Account", type: :system do
       it_behaves_like "does not display extra user field", "profession", "Profession"
     end
 
-    context "when document id is not enabled" do
-      let(:document_id) do
+    context "when document id name is not enabled" do
+      let(:document_id_name) do
         { "enabled" => false }
       end
 
-      it_behaves_like "does not display extra user field", "document_id", "Document ID"
+      it_behaves_like "does not display extra user field", "document_id_name", "Name from Document ID"
     end
+
+    # Disabled as "Name from Document ID" includes "Document ID"
+    # context "when document id is not enabled" do
+    #   let(:document_id) do
+    #     { "enabled" => false }
+    #   end
+    #
+    #   it_behaves_like "does not display extra user field", "document_id", "Document ID"
+    # end
   end
 end

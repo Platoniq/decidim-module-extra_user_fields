@@ -20,6 +20,7 @@ def fill_extra_user_fields
   fill_in :registration_user_phone_number, with: "0123456789"
   fill_in :registration_user_location, with: "Cahors"
   fill_in :registration_user_profession, with: "Software Engineer"
+  fill_in :registration_user_document_id_name, with: "John Doe"
   fill_in :registration_user_document_id, with: "123456789-A"
   # Block ExtraUserFields FillExtraUserFields
 
@@ -49,6 +50,7 @@ describe "Extra user fields", type: :system do
       "phone_number" => phone_number,
       "location" => location,
       "profession" => profession,
+      "document_id_name" => document_id_name,
       "document_id" => document_id,
       # EndBlock
     }
@@ -83,6 +85,10 @@ describe "Extra user fields", type: :system do
     { "enabled" => true }
   end
 
+  let(:document_id_name) do
+    { "enabled" => true }
+  end
+
   let(:document_id) do
     { "enabled" => true }
   end
@@ -105,6 +111,7 @@ describe "Extra user fields", type: :system do
       expect(page).to have_content("Phone Number")
       expect(page).to have_content("Location")
       expect(page).to have_content("Profession")
+      expect(page).to have_content("Name from Document ID")
       expect(page).to have_content("Document ID")
       # Block ExtraUserFields ContainsFieldSpec
 
@@ -130,6 +137,7 @@ describe "Extra user fields", type: :system do
   it_behaves_like "mandatory extra user fields", "phone_number"
   it_behaves_like "mandatory extra user fields", "location"
   it_behaves_like "mandatory extra user fields", "profession"
+  it_behaves_like "mandatory extra user fields", "document_id_name"
   it_behaves_like "mandatory extra user fields", "document_id"
   # Block ExtraUserFields ItBehavesLikeSpec
 
@@ -146,6 +154,7 @@ describe "Extra user fields", type: :system do
       expect(page).not_to have_content("Phone Number")
       expect(page).not_to have_content("Location")
       expect(page).not_to have_content("Profession")
+      expect(page).not_to have_content("Name from Document ID")
       expect(page).not_to have_content("Document ID")
       # Block ExtraUserFields DoesNotContainFieldSpec
 

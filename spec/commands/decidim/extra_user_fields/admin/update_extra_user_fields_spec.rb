@@ -17,6 +17,7 @@ module Decidim
         let(:phone_number) { true }
         let(:location) { true }
         let(:profession) { true }
+        let(:document_id_name) { true }
         let(:document_id) { true }
         # Block ExtraUserFields RspecVar
 
@@ -33,6 +34,7 @@ module Decidim
             "phone_number" => phone_number,
             "location" => location,
             "profession" => profession,
+            "document_id_name" => document_id_name,
             "document_id" => document_id,
             # Block ExtraUserFields ExtraUserFields
 
@@ -87,6 +89,7 @@ module Decidim
               expect(extra_user_fields).to include("phone_number" => { "enabled" => true })
               expect(extra_user_fields).to include("location" => { "enabled" => true })
               expect(extra_user_fields).to include("profession" => { "enabled" => true })
+              expect(extra_user_fields).to include("document_id_name" => { "enabled" => true })
               expect(extra_user_fields).to include("document_id" => { "enabled" => true })
               # Block ExtraUserFields InclusionSpec
 

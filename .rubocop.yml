@@ -19,6 +19,10 @@ Metrics/CyclomaticComplexity:
   Exclude:
     - "app/commands/decidim/extra_user_fields/admin/update_extra_user_fields.rb"
 
+Metrics/PerceivedComplexity:
+  Exclude:
+    - "app/commands/decidim/extra_user_fields/admin/update_extra_user_fields.rb"
+
 RSpec/FilePath:
   Exclude:
     - "spec/serializers/user_export_serializer_spec.rb"
