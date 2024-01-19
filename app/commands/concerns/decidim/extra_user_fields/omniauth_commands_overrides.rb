@@ -53,6 +53,7 @@ module Decidim
           phone_number: form.phone_number,
           location: form.location,
           profession: form.profession,
+          document_id_name: form.document_id_name,
           document_id: form.document_id
         )
       end

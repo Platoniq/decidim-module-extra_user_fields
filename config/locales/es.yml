@@ -6,6 +6,7 @@ es:
         country: País
         date_of_birth: Fecha de nacimiento
         document_id: DNI
+        document_id_name: Nombre en documento de identidad
         gender: Género
         location: Localización
         phone_number: Teléfono
@@ -40,6 +41,10 @@ es:
               description: Este es un campo de texto. El usuario podrá registrar su
                 DNI
               label: Habilitar campo DNI
+            document_id_name:
+              description: Este es un campo de texto. El usuario podrá registrar su
+                nombre en el documento de identidad
+              label: Habilitar campo nombre en documento de identidad
             gender:
               description: Este campo es un campo de géneros. El usuario podrá seleccionar
                 uno

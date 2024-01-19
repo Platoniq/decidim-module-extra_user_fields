@@ -26,6 +26,10 @@
   <%= f.text_field :profession %>
 <% end %>
 
+<% if current_organization.activated_extra_field?(:document_id_name) %>
+  <%= f.text_field :document_id_name %>
+<% end %>
+
 <% if current_organization.activated_extra_field?(:document_id) %>
   <%= f.text_field :document_id %>
 <% end %>

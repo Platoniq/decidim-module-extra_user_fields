@@ -47,6 +47,12 @@
         </div>
       <% end %>
 
+      <% if current_organization.activated_extra_field?(:document_id_name) %>
+        <div class="field">
+          <%= f.text_field :document_id_name %>
+        </div>
+      <% end %>
+
       <% if current_organization.activated_extra_field?(:document_id) %>
         <div class="field">
           <%= f.text_field :document_id %>

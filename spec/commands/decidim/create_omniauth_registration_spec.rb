@@ -19,6 +19,7 @@ module Decidim
         let(:phone_number) { "0123456789" }
         let(:postal_code) { "75001" }
         let(:profession) { "Software Engineer" }
+        let(:document_id_name) { "John Doe" }
         let(:document_id) { "123456789-A" }
         let(:extended_data) do
           {
@@ -29,6 +30,7 @@ module Decidim
             phone_number: phone_number,
             postal_code: postal_code,
             profession: profession,
+            document_id_name: document_id_name,
             document_id: document_id
           }
         end
@@ -51,6 +53,7 @@ module Decidim
               "phone_number" => phone_number,
               "location" => location,
               "profession" => profession,
+              "document_id_name" => document_id_name,
               "document_id" => document_id
             }
           }

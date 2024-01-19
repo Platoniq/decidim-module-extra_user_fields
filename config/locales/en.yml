@@ -6,6 +6,7 @@ en:
         country: Country
         date_of_birth: Date of birth
         document_id: Document ID
+        document_id_name: Name from Document ID
         gender: Gender
         location: Location
         phone_number: Phone Number
@@ -41,6 +42,10 @@ en:
               description: This field is a String field. User will be able to choose
                 a document id
               label: Enable document id field
+            document_id_name:
+              description: This field is a String field. User will be able to choose
+                a name from document id
+              label: Enable document id name field
             gender:
               description: This field is a list of genders. User will be able to choose
                 a gender
