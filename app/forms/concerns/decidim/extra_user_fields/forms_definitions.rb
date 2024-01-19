@@ -11,6 +11,9 @@ module Decidim
       included do
         include ::Decidim::ExtraUserFields::ApplicationHelper
 
+        DNI_REGEX = /^(\d{8})([A-Z])$/
+        NIE_REGEX = /^[XYZ]\d{7,8}[A-Z]$/
+
         # Block ExtraUserFields Attributes
 
         attribute :country, String
@@ -36,6 +39,8 @@ module Decidim
         validates :document_id, presence: true, if: :document_id?
 
         # EndBlock
+
+        validate :check_document_id
       end
 
       def map_model(model)
@@ -91,6 +96,43 @@ module Decidim
       end
 
       # EndBlock
+
+      def check_document_id
+        return unless document_id?
+
+        case document_type
+        when "DNI"
+          errors.add(:document_id, :invalid) unless valid_dni?(document_id)
+        when "NIE"
+          errors.add(:document_id, :invalid) unless valid_nie?
+        else
+          errors.add(:document_id, :invalid)
+        end
+      end
+
+      def document_type
+        @document_type ||= if document_id =~ DNI_REGEX
+                             "DNI"
+                           elsif document_id =~ NIE_REGEX
+                             "NIE"
+                           end
+      end
+
+      def valid_nie?
+        nie_prefix = case document_id[0]
+                     when "X"
+                       0
+                     when "Y"
+                       1
+                     else
+                       2
+                     end
+        valid_dni?("#{nie_prefix}#{document_id[1..]}")
+      end
+
+      def valid_dni?(dni)
+        dni[-1] == "TRWAGMYFPDXBNJZSQVHLCKE"[dni.to_i % 23]
+      end
 
       def extra_user_fields_enabled
         @extra_user_fields_enabled ||= current_organization.extra_user_fields_enabled?

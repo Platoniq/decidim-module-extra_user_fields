@@ -19,7 +19,7 @@ module Decidim
         let(:phone_number) { "0123456789" }
         let(:postal_code) { "75001" }
         let(:profession) { "Software Engineer" }
-        let(:document_id) { "123456789-A" }
+        let(:document_id) { "123456789B" }
         let(:extended_data) do
           {
             country: country,

@@ -31,7 +31,7 @@ describe Decidim::ExtraUserFields::UserExportSerializer do
   let(:phone_number) { "0123456789" }
   let(:location) { "Cahors" }
   let(:profession) { "Software Engineer" }
-  let(:document_id) { "123456789-A" }
+  let(:document_id) { "123456789B" }
   # Block ExtraUserFields RspecVar
 
   # EndBlock

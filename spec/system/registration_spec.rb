@@ -20,7 +20,7 @@ def fill_extra_user_fields
   fill_in :registration_user_phone_number, with: "0123456789"
   fill_in :registration_user_location, with: "Cahors"
   fill_in :registration_user_profession, with: "Software Engineer"
-  fill_in :registration_user_document_id, with: "123456789-A"
+  fill_in :registration_user_document_id, with: "123456789B"
   # Block ExtraUserFields FillExtraUserFields
 
   # EndBlock
